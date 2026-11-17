@@ -1,3 +1,5 @@
+https://dbdiagram.io/d/webblog-actual-6afc384ad4a729077d10a69e
+
 after pull:
     add .env (copy .env.example)
     uncomment db spul
