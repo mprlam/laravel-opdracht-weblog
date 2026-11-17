@@ -1,0 +1,11 @@
+after pull:
+    add .env (copy .env.example)
+    uncomment db spul
+    check username, pw en db name.
+
+run in terminal:
+    composer update
+    php artisan migrate:fresh --seed
+    php artisan key:generate
+    php artisan storage:link
+    php artisan serve

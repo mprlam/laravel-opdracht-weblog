@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    place-items: center;
+}
+
+nav, #articles{
+    grid-column-start: 1;
+}
+
+
+.logout-button, #logout-form {
+    appearance: none;
+    font: inherit;
+    border: inherit;
+}
+
+nav {
+    display: flex;
+    top: 1.2vh;
+    max-height: 10vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-button, .logout-button {
+    margin: 10px;
+    margin-right: 3px;
+    padding: 0.4em;
+    max-height: 2em;
+    max-width: fit-content;
+    text-align: center;
+    background-color: #999;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-button:hover, .logout-button:hover{
+    background-color: #222;
+    cursor: pointer;
+}
+
+.active-nav {
+    background-color: #333;
+}
+
+#articles {
+    grid-row-start: 3;
+    width: 100%;
+}
+
+#article-image{
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+#comments {
+    display: flex;
+    flex-direction: column;
+    max-width: 60vw;
+}
+
+#comment-form, .article, .comment {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+#comment-login-link{
+    align-self: center;
+}
+
+#comment-form-text {
+    height: 6em;
+    resize: none;
+}
+
+#create-article-text, #edit-article-text{
+    height: 30em;
+    width: 40em;
+    resize: none;
+}
+
+.article, .comment{
+    display: flex;
+    flex-direction: column;
+    border: black 1px solid;
+    border-radius: 7px;
+    padding-left: 0.8em;
+}
+
+.article {
+    min-width: 80%;
+}
+
+#article-image {
+    max-height: 20vh;
+}
+
+#add-image, #remove-image{
+    margin: 0.1em;
+    margin-bottom: 0.8em;
+}
+.comment, #comment-form {
+    max-width: fit-content;
+    min-width: 60vw;
+}
+
+.clickable-article {
+    text-decoration: none;
+    color: black;
+}
+
+.article-name {
+    margin: 0.1rem;
+}
+
+.article-text, .comment-text {
+    max-width: fit-content;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.home-article-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+    max-height: 5em;
+    text-overflow: ellipsis;
+}
+
+.article-footer, .comment-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: grey;
+}
+
+.article-buttons {
+    display: flex;
+    flex-direction: row;   
+}
+
+.article-edit, .article-delete {
+    height: fit-content;
+    align-self: center;
+    margin: 1px;
+}
+
+.article-date, .comment-date {
+    text-align: right;
+    margin-right: 5px;
+}
+
+#comment-form {
+    display:flex;
+    flex-direction: column;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px gray solid;
+    border-radius: 7px;
+    max-width: 25vw;
+    min-height: fit-content;
+    place-items: center;
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+.login-input, .login-label{
+    margin: 5px;
+    padding-left: 5px;
+    min-width: 60%;
+}
+
+.login-label {
+    width: 100%;
+    text-align: left;
+}
+
+.logout-button, #logout-form {
+    align-items: center;
+    justify-content: center;
+}
+
+#create-form{
+    display: grid;
+    width:auto;
+}
+
+#add-category-label{
+    background-color: lightgray;
+}
+
+#add-category-label:hover{
+    background-color: gray;
+}
+
+.add-categories-list-label:hover{
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.add-categories-list-label:has(.add-categories-list-input:checked){
+    background-color: lightgray;
+}
+
+.premium-mark{
+    margin: 0;
+}
+
+#categories, .premium-mark {
+    font-size: 0.8em;
+    color: grey;
+}
+
+#categories-list, #add-categories-list, #filter-categories-button {
+    display: none;
+}
+
+#categories-checkbox:checked ~ #categories-list, #add-categories-checkbox:checked ~ #add-categories-list,
+#add-categories-checkbox:checked ~ #filter-categories-button{
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 50%;
+    padding: 0;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.categories-list-category, #category-label, .add-categories-list-category, #category-label{
+    padding-left: 0.4em;
+}
